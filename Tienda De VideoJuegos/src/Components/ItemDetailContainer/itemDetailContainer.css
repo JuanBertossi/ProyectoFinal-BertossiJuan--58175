@@ -1,0 +1,21 @@
+.item-link {
+    text-decoration: none;
+  }
+  
+  .item-image {
+    height: 300px;
+  }
+  
+  .item-title {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .item-price {
+    color: black;
+  }
+  
+  .item-button {
+    background-color: black;
+    color: white;
+  }

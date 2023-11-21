@@ -1,0 +1,53 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "CajasCS",
+        "precio": 200,
+        "img": "../src/assets/CajasCs.jpg",
+        "cantidad": 1,
+        "categoria": "PC"
+      },
+      {
+        "id": 2,
+        "nombre": "RiotPoint",
+        "precio": 500,
+        "img": "../src/assets/RiotPoint.webp",
+        "cantidad": 1,
+        "categoria": "PC"
+      },
+      {
+        "id": 3,
+        "nombre": "C-Stacks",
+        "precio": 1000,
+        "img": "../src/assets/C-Stacks.jpg",
+        "cantidad": 200000,
+        "categoria": "PC"
+      },
+      {
+        "id": 4,
+        "nombre": "Pay Day 3",
+        "precio": 60000,
+        "img": "../src/assets/PayDay3.jpg",
+        "cantidad": 1,
+        "categoria": "PC"
+      },
+      {
+        "id": 5,
+        "nombre": "Forza Horizon 5",
+        "precio": 50000,
+        "img": "../src/assets/Forza5.jpg",
+        "cantidad": 1,
+        "categoria": "XBOX"
+      },
+      {
+        "id": 6,
+        "nombre": "Days Gone",
+        "precio": 40000,
+        "img": "../src/assets/DaysGone.jpg",
+        "cantidad": 1,
+        "categoria": "PS"
+      }
+    ]
+  }
+  
