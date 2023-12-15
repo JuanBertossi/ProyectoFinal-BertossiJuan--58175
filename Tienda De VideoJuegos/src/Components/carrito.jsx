@@ -9,9 +9,9 @@ const CartWidget = () => {
   return (
     <div className="divCarrito">
       <img className="carrito" src={carritoLogo} alt="carritoLogo" />
-      <p style={{fontSize: "1.2rem"}}>{ itemCount }</p>
+      <p style={{ fontSize: "1.2rem" }}>{itemCount}</p>
     </div>
   );
-}
+};
 
 export default CartWidget;

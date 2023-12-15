@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Preahvihear&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Preahvihear&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen&display=swap");
 
-.subtitulo{
-  font-family: 'Silkscreen', sans-serif;
+.subtitulo {
+  font-family: "Silkscreen", sans-serif;
   display: flex;
   justify-content: center;
 }
@@ -30,23 +30,22 @@
 
 .item-list {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 20px;
   margin: 0;
 }
-.item-image{
+.item-image {
   width: 350px;
   height: 370px;
 }
-.item-description{
+.item-description {
   font-size: 18px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-.item-cant{
-  font-family: 'Poppins', sans-serif;
+.item-cant {
+  font-family: "Poppins", sans-serif;
 }
-.item-category{
-  font-family: 'Preahvihear', sans-serif;
+.item-category {
+  font-family: "Preahvihear", sans-serif;
   font-size: 20px;
 }
-

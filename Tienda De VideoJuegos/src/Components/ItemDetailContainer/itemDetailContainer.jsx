@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { db } from '../../firebase/client';
-import { getDoc, doc } from 'firebase/firestore';
+import { db } from "../../firebase/client";
+import { getDoc, doc } from "firebase/firestore";
 import "./ItemDetailContainer.css";
 import { ItemQuantitySelector } from "../ItemQuantitySelector/ItemQuantitySelector";
 

@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "../Components/NavBar";
 import ItemListContainer from "../Components/ItemListContainer/itemListContainer";
 import ItemDetailContainer from "../Components/ItemDetailContainer/itemDetailContainer";
-import Home from "../Pages/Home"
-
+import Home from "../Pages/Home";
 
 const RutaPrincipal = () => {
   return (

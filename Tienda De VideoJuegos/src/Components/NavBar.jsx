@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function navBar() {
   return (
-    <> 
+    <>
       <nav>
         <div className="divLN">
           <img className="logoReact" src={logoReact} alt="logoReact" />
@@ -13,24 +13,24 @@ function navBar() {
         </div>
         <ul>
           <button>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
           </button>
           <button>
-          <li>
-            <Link to="/category/pc">PC</Link>
-          </li>
+            <li>
+              <Link to="/category/pc">PC</Link>
+            </li>
           </button>
           <button>
-          <li>
-            <Link to="/category/xbox">Xbox</Link>
-          </li>
+            <li>
+              <Link to="/category/xbox">Xbox</Link>
+            </li>
           </button>
           <button>
-          <li>
-            <Link to="/category/ps">PS</Link>
-          </li>
+            <li>
+              <Link to="/category/ps">PS</Link>
+            </li>
           </button>
         </ul>
         <CartWidget></CartWidget>

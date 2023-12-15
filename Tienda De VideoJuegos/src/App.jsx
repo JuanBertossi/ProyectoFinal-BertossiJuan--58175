@@ -5,13 +5,12 @@ import { CartProvider } from "./context/CartContext.jsx";
 
 const App = () => {
   return (
-      <div>
-        <CartProvider>
-          <RutaPrincipal/>
-        </CartProvider>
-      </div>
+    <div>
+      <CartProvider>
+        <RutaPrincipal />
+      </CartProvider>
+    </div>
   );
 };
 
 export default App;
-
