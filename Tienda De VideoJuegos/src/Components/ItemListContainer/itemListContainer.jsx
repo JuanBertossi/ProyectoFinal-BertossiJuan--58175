@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { db } from '../../firebase/client';
+import { getDocs, collection } from 'firebase/firestore';
 import "./ItemListContainer.css";
-import Productos from '../Datos.json';
 
 const ItemListContainer = () => {
   const { categoria } = useParams();
+  const [productos, setProductos] = useState([]);
 
-  const productosFiltrados = Productos.productos.filter((producto) => {
+  useEffect(() => {
+    const obtenerProductos = async () => {
+      try {
+        const productsRef = collection(db, 'productos');
+        const data = await getDocs(productsRef);
+        const productosData = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+        setProductos(productosData);
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
+      }
+    };
+
+    obtenerProductos();
+  }, [categoria]);
+
+  const productosFiltrados = productos.filter((producto) => {
     if (categoria) {
-      return producto.categoria.toLowerCase() === categoria;
+      return producto.category.toLowerCase() === categoria;
     } else {
       return true;
     }
@@ -16,19 +33,21 @@ const ItemListContainer = () => {
 
   return (
     <div>
-       <h2 className= "subtitulo">Catálogo de Productos</h2>
-    <div className="item-container">
-      {productosFiltrados.map((producto) => (
-        <Link key={producto.id} to={`/item/${producto.id}`}>
-          <div className="item">
-            <img src={producto.img} alt={producto.nombre} className="item-image" />
-            <h3 className="item-title">{producto.nombre}</h3>
-            <p className="item-cant">Cantidad: {producto.cantidad}</p>
-            <p className="item-price">Precio: ${producto.precio}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
+      <h2 className="subtitulo">Catálogo de Productos</h2>
+      <div className="item-container">
+        {productosFiltrados.map((producto) => (
+          <Link key={producto.id} to={`/item/${producto.id}`}>
+            <div className="item">
+              <img src={producto.img} alt={producto.title} className="item-image" />
+              <h1 className="item-title">{producto.title}</h1>
+              <h3 className="item-category">{producto.category}</h3>
+              <p className="item-description">{producto.description}</p>
+              <h3 className="item-cant">Cantidad: {producto.stock}</h3>
+              <h2 className="item-price">Precio: ${producto.price}</h2>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };

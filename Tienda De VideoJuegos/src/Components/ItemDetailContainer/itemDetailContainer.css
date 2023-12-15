@@ -1,21 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 .item-link {
     text-decoration: none;
   }
   
-  .item-image {
+.item-image {
     height: 300px;
-  }
+}
   
-  .item-title {
-    font-family: Arial, sans-serif;
+.item-title {
+    font-family: 'Poppins', sans-serif;;
     color: #333;
-  }
+}
   
-  .item-price {
+.item-price {
     color: black;
-  }
+    font-family: 'Poppins', sans-serif;
+}
   
-  .item-button {
-    background-color: black;
-    color: white;
-  }

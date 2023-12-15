@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
 nav {
     background-color: beige;
   }
@@ -13,7 +14,7 @@ nav {
   }
   
   .tiendaNombre {
-    font-family: sans-serif;
+    font-family: 'Silkscreen', sans-serif;
     font-size: 2rem;
   }
   
@@ -52,16 +53,12 @@ nav {
   
   .carrito {
     width: 60px;
-    height: 60px;
+    height: 50px;
   }
   
   .divCarrito {
     display: flex;
-    justify-content: end;
     margin-right: 50px;
   }
   
-  .Cantidad {
-    display: inline-block;
-  }
   

@@ -1,15 +1,17 @@
 import React from "react";
-import carritoLogo from "../assets/carrito.png";
+import carritoLogo from "../assets/carrito.jpg";
 import "./NavBar.css";
+import { CartContext } from "../context/CartContext";
 
-export default function CartWidget() {
-  const click = () => {
-  };
+const CartWidget = () => {
+  const { itemCount } = React.useContext(CartContext);
 
   return (
     <div className="divCarrito">
-      <img onClick={click} className="carrito" src={carritoLogo} alt="carritoLogo" />
-      <p className="cantidad">0</p>
+      <img className="carrito" src={carritoLogo} alt="carritoLogo" />
+      <p style={{fontSize: "1.2rem"}}>{ itemCount }</p>
     </div>
   );
 }
+
+export default CartWidget;

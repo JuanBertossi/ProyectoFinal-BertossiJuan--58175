@@ -1,29 +1,48 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { db } from '../../firebase/client';
+import { getDoc, doc } from 'firebase/firestore';
 import "./ItemDetailContainer.css";
-import Productos from '../Datos.json';
+import { ItemQuantitySelector } from "../ItemQuantitySelector/ItemQuantitySelector";
 
 const ItemDetailContainer = () => {
   const { itemId } = useParams();
-  const id = parseInt(itemId);
-  const producto = Productos.productos.find((p) => p.id === id);
+  const [producto, setProducto] = useState(null);
 
+  useEffect(() => {
+    const obtenerProducto = async () => {
+      try {
+        const productRef = doc(db, "productos", itemId);
+        const docSnap = await getDoc(productRef);
 
-  const addToCart = () => {
-    console.log(`Añadir al carrito: ${producto.nombre}`);
-  };
+        if (docSnap.exists()) {
+          setProducto({ id: docSnap.id, ...docSnap.data() });
+        } else {
+          console.error("No se encontró el producto con ID:", itemId);
+        }
+      } catch (error) {
+        console.error("Error al obtener el producto:", error);
+      }
+    };
+
+    obtenerProducto();
+  }, [itemId]);
+
+  if (!producto) {
+    return <div>Cargando...</div>;
+  }
 
   return (
     <div className="item">
-      <div to={`/item/${producto.id}`} className="item-link">
-        <img src={producto.img} alt={producto.nombre} className="item-image" />
-        <h3 className="item-title">{producto.nombre}</h3>
-        <p className="item-cant">Cantidad: {producto.cantidad}</p>
-        <p className="item-price">Precio: ${producto.precio}</p>
+      <div className="item-link">
+        <img src={producto.img} alt={producto.title} className="item-image" />
+        <h1 className="item-title">{producto.title}</h1>
+        <h3 className="item-category">{producto.category}</h3>
+        <p className="item-description">{producto.description}</p>
+        <h3 className="item-cant">Cantidad: {producto.stock}</h3>
+        <h2 className="item-price">Precio: ${producto.price}</h2>
       </div>
-      <button onClick={addToCart} className="item-button">
-        Agregar al carrito
-      </button>
+      <ItemQuantitySelector />
     </div>
   );
 };

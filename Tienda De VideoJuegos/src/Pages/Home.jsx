@@ -5,8 +5,7 @@ import "../Pages/Pages.css"
 const Home = () => {
   return (
     <div>
-      <h2>Tienda De VideoJuegos</h2>
-      <p>Explora nuestros videojuegos o giftcards.</p>
+      <h2 className="subtituloPag">Explora nuestros videojuegos o giftcards.</h2>
       <ItemListContainer />
     </div>
   );
