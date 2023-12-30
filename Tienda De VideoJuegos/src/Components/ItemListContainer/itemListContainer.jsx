@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { db } from "../../firebase/client";
 import { getDocs, collection } from "firebase/firestore";
-import "./ItemListContainer.css";
+import "./itemListContainer.css";
 
 const ItemListContainer = () => {
   const { categoria } = useParams();
