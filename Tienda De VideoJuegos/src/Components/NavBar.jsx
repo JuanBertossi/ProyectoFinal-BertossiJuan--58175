@@ -32,6 +32,11 @@ function navBar() {
               <Link to="/category/ps">PS</Link>
             </li>
           </button>
+          <button>
+            <li>
+              <Link to="/carrito">Carrito</Link>
+            </li>
+          </button>
         </ul>
         <CartWidget></CartWidget>
       </nav>

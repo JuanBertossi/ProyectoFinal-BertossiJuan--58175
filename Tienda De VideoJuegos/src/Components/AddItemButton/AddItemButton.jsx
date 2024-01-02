@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 export const AddItemButton = ({
+  product,
   label = "Agregar al carrito",
   quantity,
   handleResetQuantity,
 }) => {
-  const { itemCount, setItemCount } = React.useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   const handleAddCart = () => {
-    setItemCount(itemCount + quantity);
+    addToCart({ ...product, quantity });
     handleResetQuantity();
   };
 
