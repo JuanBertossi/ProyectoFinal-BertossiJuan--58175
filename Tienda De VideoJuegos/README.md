@@ -3,6 +3,7 @@
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Iniciar:
+
 1)NPM I
 
 2)Cd "/workspaces/ProyectoFinal-BertossiJuan--58175/Tienda De VideoJuegos"
